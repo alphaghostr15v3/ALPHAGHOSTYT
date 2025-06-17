@@ -19,8 +19,9 @@ class IndexController extends Controller
     }
 
     function ContactUs(){
-        $name = "shubham";
+        $name = "Kallu";
         $state = ["Kanpur", "Mumbai", "Delhi", "Lucknow"];
         return view('contactus', ['name'=>$name, 'city'=>$state]);
     }
+
 }
