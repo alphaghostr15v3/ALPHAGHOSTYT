@@ -4,24 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class IndexController
 {
     function Index(){
-        return view('index');
+        // return redirect()->to('/Home/index/user-form');
+        return to_route('form');
     }
-
-    function About(){
-        return view('about');
-    }
-
-    function Home(){
-        return view('home');
-    }
-
-    function ContactUs(){
-        $name = "Kallu";
-        $state = ["Kanpur", "Mumbai", "Delhi", "Lucknow"];
-        return view('contactus', ['name'=>$name, 'city'=>$state]);
-    }
-
 }

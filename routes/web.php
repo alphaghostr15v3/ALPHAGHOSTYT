@@ -1,19 +1,17 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\RegistrationController;
-use App\Http\Controllers\UrlController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserformController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
-Route::get('/', [IndexController::class, 'Index']);
-Route::get('/Home', [Indexcontroller::class, 'Home']);
-Route::get('/about', [Indexcontroller::class, 'About']);
-Route::get('/contact', [IndexController::class, 'ContactUs']);
-Route::post('registration', [RegistrationController::class, 'Registration']);
-Route::post('user-form', [UserController::class, 'User']);
-Route::get('/url/{name}',[ UrlController::class, 'kali']);
+Route::get('/index', [IndexController::class, 'Index']);
+Route::post('user-form', [UserformController::class, 'Userform']);
+Route::view('/Home/index/user-form', 'user-form')->name('form');
 
-Route::view('/registration', 'registrationform');
-Route::view('/user-form', 'user-form');
+
+Route::view('/Home/index/user/about', 'about')->name('user');
+Route::view('/Home/index/user/{name}', 'about')->name('user');
+
+Route::get('Home', [HomeController::class, 'Home']);
+ 
