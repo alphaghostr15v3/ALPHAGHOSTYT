@@ -1,22 +1,12 @@
 <div>
     <h1>User Form</h1>
-{{-- 
-    @if($errors->any())
-    @foreach ($errors->all() as $error)
-        
-    <div style="color: red">
-        {{$error}}
-    </div>
-    @endforeach
-        
-    @endif --}}
-
-    <form action="user-form" method="POST">
+    
+    <form action="student-form" method="POST">
         @csrf
         <div>
             <label>
             <label for="student">Name:</label>
-            <input type="text" placeholder="Enter Your Name" name="student" value="{{old('student')}}" id="student" 
+            <input type="text" placeholder="Enter Your Name" name="name" value="{{old('student')}}" id="student" 
             class="{{$errors->first('student')?'input-error':''}}">
             <span style="color: red">@error('student'){{$message}}@enderror</span>
 
